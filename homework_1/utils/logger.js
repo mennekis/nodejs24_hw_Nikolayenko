@@ -21,8 +21,12 @@ function warn() {
 function error() {
    console.log("WE HAVE AN ERROR!");
 }
-module.exports = {
-   info,
-   warn,
-   error,
+
+module.exports = function logger(initialName) {
+   return {
+      info: (...args) => console.info(initialName, ...args),
+      warn: (...args) => console.warn(initialName, ...args),
+      error: (...args) => console.error(initialName, ...args)
+   }
 };
+
