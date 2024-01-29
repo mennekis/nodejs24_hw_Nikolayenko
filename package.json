@@ -1,24 +1,25 @@
 {
-  "name": "nodejs24_hw_nikolayenko",
-  "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mennekis/nodejs24_hw_Nikolayenko.git"
-  },
-  "author": "Alexey Nikolayenko",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mennekis/nodejs24_hw_Nikolayenko/issues"
-  },
-  "homepage": "https://github.com/mennekis/nodejs24_hw_Nikolayenko",
-  "keywords": [],
-  "dependencies": {
-    "colors": "^1.4.0",
-    "dotenv": "^16.4.1"
-  }
+   "name": "nodejs24_hw_nikolayenko",
+   "version": "1.0.0",
+   "description": "",
+   "main": "main.js",
+   "scripts": {
+      "start": "nodemon ./main.js"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/mennekis/nodejs24_hw_Nikolayenko.git"
+   },
+   "author": "Alexey Nikolayenko",
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/mennekis/nodejs24_hw_Nikolayenko/issues"
+   },
+   "homepage": "https://github.com/mennekis/nodejs24_hw_Nikolayenko",
+   "keywords": [],
+   "dependencies": {
+      "colors": "^1.4.0",
+      "dotenv": "^16.4.1",
+      "nodemon": "^3.0.3"
+   }
 }
