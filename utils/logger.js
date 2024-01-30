@@ -1,9 +1,12 @@
 function logger(initialName) {
-   const colors = require("colors");
+   colors = require("colors/safe");
    return {
-      info: (...args) => console.info((initialName + ":").blue, ...args),
-      warn: (...args) => console.warn((initialName + ":").yellow, ...args),
-      error: (...args) => console.error((initialName + ":").red, ...args),
+      info: (...args) =>
+         console.info(colors.bgGreen(initialName + ":"), ...args),
+      warn: (...args) =>
+         console.warn(colors.bgYellow(initialName + ":"), ...args),
+      error: (...args) =>
+         console.error(colors.bgRed(initialName + ":"), ...args),
    };
 }
 
