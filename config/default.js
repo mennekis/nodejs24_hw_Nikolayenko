@@ -1,5 +1,6 @@
-const colorMode = process.env.COLORS_ENABLED === 1 ? 1 : 0;
+const colorMode = process.env.COLORS_ENABLED;
+
 module.exports = {
-   logLevel: "warn",
+   logLevel: "info",
    colorMode,
 };

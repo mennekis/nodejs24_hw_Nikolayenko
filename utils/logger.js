@@ -1,10 +1,10 @@
-const colorMode = process.env.COLORS_ENABLED === 1 ? 1 : 0;
+const colorMode = process.env.COLORS_ENABLED === "1" ? "1" : "0";
 const logLevel = process.env.NODE_ENV === "prod" ? "error" : "info";
 colors = require("colors/safe");
 
 function logger(initialName) {
    console.log(colorMode, logLevel);
-   if (colorMode === 1 && logLevel === "info") {
+   if (colorMode === "1") {
       return {
          info: (...args) =>
             console.info(colors.bgGreen(initialName + ":"), ...args),
