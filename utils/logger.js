@@ -1,13 +1,25 @@
+const colorMode = process.env.COLORS_ENABLED === 1 ? 1 : 0;
+const logLevel = process.env.NODE_ENV === "prod" ? "error" : "info";
+colors = require("colors/safe");
+
 function logger(initialName) {
-   colors = require("colors/safe");
-   return {
-      info: (...args) =>
-         console.info(colors.bgGreen(initialName + ":"), ...args),
-      warn: (...args) =>
-         console.warn(colors.bgYellow(initialName + ":"), ...args),
-      error: (...args) =>
-         console.error(colors.bgRed(initialName + ":"), ...args),
-   };
+   console.log(colorMode, logLevel);
+   if (colorMode === 1 && logLevel === "info") {
+      return {
+         info: (...args) =>
+            console.info(colors.bgGreen(initialName + ":"), ...args),
+         warn: (...args) =>
+            console.warn(colors.bgYellow(initialName + ":"), ...args),
+         error: (...args) =>
+            console.error(colors.bgRed(initialName + ":"), ...args),
+      };
+   } else {
+      return {
+         info: (...args) => console.info(initialName + ":", ...args),
+         warn: (...args) => console.warn(initialName + ":", ...args),
+         error: (...args) => console.error(initialName + ":", ...args),
+      };
+   }
 }
 
 module.exports = logger;

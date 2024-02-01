@@ -1,7 +1,5 @@
-const logLevel = process.env.NODE_ENV === "production" ? "error" : "info";
-const colorMode = process.env.FORCE_COLOR === "1" ? "COLORS_ENABLED" : 0;
-
+const colorMode = process.env.COLORS_ENABLED === 1 ? 1 : 0;
 module.exports = {
-   logLevel,
+   logLevel: "warn",
    colorMode,
 };
