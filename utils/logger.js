@@ -1,6 +1,5 @@
-const colorMode = process.env.COLORS_ENABLED === "1";
-const logLevel = process.env.NODE_ENV === "prod" ? "error" : "info";
-colors = require("colors/safe");
+const colors = require("colors/safe");
+const { logLevel, colorMode } = require('config');
 
 function logger(initialName) {
    // ? make the checking console.log(colorMode, logLevel);
