@@ -2,9 +2,17 @@ const colors = require("colors/safe");
 const { logLevel, colorMode } = require("config");
 
 function logger(initialName) {
-   // console.log(colorMode, logLevel);
+   console.log(colorMode, logLevel);
 
-   if (colorMode !== "0") {
+   /* 1. на етапі ініціалізації логгера, один раз перевіряємо чи включені у нас кольори в конфігу.
+      Якщо виключені - виключаємо цей фунцкіонал в коді. Достатньо це зробити саме тут
+      і більше не чипати методи пакета `colors`
+   */
+  if (colorMode == "0") {
+   colors.disable(); // по дефолту в режимі `/safe` кольори активні
+  }
+
+  if (colorMode !== "0") {
       return {
          info: (...args) => {
             if (logLevel !== "error" && logLevel !== "warn") {
