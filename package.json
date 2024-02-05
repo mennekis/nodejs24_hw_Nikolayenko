@@ -1,0 +1,32 @@
+{
+   "name": "nodejs24_hw_nikolayenko",
+   "version": "1.0.0",
+   "description": "",
+   "main": "main.js",
+   "scripts": {
+      "start": "node ./main.js",
+      "start:prod": "cross-env NODE_ENV=production node ./main.js",
+      "start:dev": "nodemon ./main.js",
+      "debug": "node --inspect-brk ./main.js"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/mennekis/nodejs24_hw_Nikolayenko.git"
+   },
+   "author": "Oleksiy Nikolayenko",
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/mennekis/nodejs24_hw_Nikolayenko/issues"
+   },
+   "homepage": "https://github.com/mennekis/nodejs24_hw_Nikolayenko",
+   "keywords": [],
+   "dependencies": {
+      "colors": "^1.4.0",
+      "config": "^3.3.10",
+      "cross-env": "^7.0.3",
+      "dotenv": "^16.4.1"
+   },
+   "devDependencies": {
+      "nodemon": "^3.0.3"
+   }
+}
