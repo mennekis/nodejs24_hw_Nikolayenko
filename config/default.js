@@ -1,4 +1,4 @@
 module.exports = {
-   logLevel: "info",
+   logLevel: "warn",
    colorMode: 0,
 };
