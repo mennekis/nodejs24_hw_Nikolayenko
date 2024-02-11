@@ -38,9 +38,9 @@ function logger(initialName) {
    return {
       info: (...args) => {
          if (logLevel === "info") {
-            const logMessage = `${getCurrentDateTime()} [INFO] ${initialName}: ${args.join(
-               " "
-            )}\n`;
+            const logMessage = `${getCurrentDateTime()} [INFO] ${initialName}: ${args
+               .map(JSON.stringify)
+               .join(" ")}\n`;
             console.info(colors.bgGreen(`${initialName}:`), ...args);
             infoStream.write(logMessage);
          }
@@ -55,9 +55,9 @@ function logger(initialName) {
          }
       },
       error: (...args) => {
-         const logMessage = `${getCurrentDateTime()} [ERROR] ${initialName}: ${args.join(
-            " "
-         )}\n`;
+         const logMessage = `${getCurrentDateTime()} [ERROR] ${initialName}: ${args
+            .map(JSON.stringify)
+            .join(" ")}\n`;
          console.error(colors.bgRed(`${initialName}:`), ...args);
          errorStream.write(logMessage);
       },

@@ -9,6 +9,10 @@
       "start:dev": "nodemon ./main.js",
       "debug": "node --inspect-brk ./main.js"
    },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/mennekis/nodejs24_hw_Nikolayenko.git"
+   },
    "author": "Oleksiy Nikolayenko",
    "license": "ISC",
    "bugs": {
