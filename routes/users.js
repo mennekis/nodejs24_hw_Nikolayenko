@@ -32,12 +32,16 @@ router.get("/", async (req, resp) => {
 
 router.get("/:userId", validateUserId, (req, resp) => {
    const { userId } = req.params;
-   if (!users[userId]) {
+   const numericUserId = Number.parseInt(userId, 10);
+
+   const userIndex = users.findIndex((user) => user.userId === numericUserId);
+
+   if (userIndex === -1) {
       return resp.status(404).json({
          message: "User not found",
       });
    }
-   resp.status(200).json(users[userId]);
+   resp.status(200).json(users[userIndex]);
 });
 
 router.delete("/:userId", validateUserId, (req, resp) => {
